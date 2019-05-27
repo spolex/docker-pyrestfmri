@@ -1,6 +1,6 @@
 version: '3'
 services:
-  namenode:
+  heudiconv:
     image: nipy/heudiconv:latest
     # networks:
       # - workbench
