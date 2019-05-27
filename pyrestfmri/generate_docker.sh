@@ -14,6 +14,6 @@ docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:s
  --expose 8888 8888\
  --volume $HOME/datos-dicom:$HOME/datos-dicom\
  --volume $HOME/pyrestfmri:$HOME/pyrestfmri\
- --volume $HOME/preproc:$HOME/preproc
+ --volume $HOME/preproc:$HOME/preproc\
  --workdir $HOMEY/pyrestfmri\
  --cmd python preprocess.py
