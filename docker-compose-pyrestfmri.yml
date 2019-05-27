@@ -6,8 +6,9 @@ services:
       # - workbench
     volumes:
       - datos-dicom:/data:ro
-      - niix-output:/output
+      - output:/output
     command:-d /data/{subject}/T0041/DICOM/14021913/*/* -s T004 --ses 11280000 -f /output/code/convertall_elekin.py -c dcm2niix -o /output
+
 volumes:
   datos-dicom:
-  niix-output:
+  output:
