@@ -2,7 +2,7 @@ docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:s
  --label maintainer="Inigo Sanchez <jisanchez003@ehu.es>"\
  --pkg-manager apt\
  --install gcc g++ graphviz tree vim nano git octave\
- --ants version=2.2.0\
+# --ants version=2.2.0\
  --fsl version=6.0.1\
  --miniconda env_name=elekin\
 	conda_install="python=3.6 traits jupyter jupyterlab matplotlib nibabel pip nitime numpy spyder dcm2niix"\
@@ -14,5 +14,6 @@ docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:s
  --expose 8888 8888\
  --volume $HOME/datos-dicom:$HOME/datos-dicom\
  --volume $HOME/pyrestfmri:$HOME/pyrestfmri\
- --workdir $HOME\
- --cmd jupyter-notebook
+ --volume $HOME/preproc:$HOME/preproc
+ --workdir $HOMEY/pyrestfmri\
+ --cmd python preprocess.py
