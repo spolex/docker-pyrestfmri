@@ -16,4 +16,4 @@ docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:s
  --volume $HOME/pyrestfmri:$HOME/pyrestfmri\
  --volume $HOME/preproc:$HOME/preproc\
  --workdir $HOMEY/pyrestfmri\
- --cmd python preprocess.py
+ --cmd python preprocess.py -c conf/config_test.json
