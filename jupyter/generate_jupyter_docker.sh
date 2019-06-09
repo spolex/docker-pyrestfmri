@@ -5,8 +5,8 @@ docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:s
  --fsl version=5.0.10\
  --ants version=2.3.1\
  --miniconda env_name=elekin\
-	conda_install="python=3.6 traits jupyter jupyterlab matplotlib nibabel pip nitime numpy dcm2niix scikit-learn"\
-	pip_install="https://github.com/nipy/nipype/tarball/master https://github.com/INCF/pybids/tarball/master nilearn "\
+	conda_install="python=3.6 traits jupyter jupyterlab matplotlib nibabel pip nitime numpy dcm2niix scikit-learn tensorflow Keras mkl theano pygpu"\
+	pip_install="https://github.com/nipy/nipype/tarball/master https://github.com/INCF/pybids/tarball/master nilearn git+git://github.com/nipy/niwidgets/ nxpd seaborn"\
 	create_env="elekin"\
 	activate=true\
  --user elekin\
