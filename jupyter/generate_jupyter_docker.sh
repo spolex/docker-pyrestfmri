@@ -2,7 +2,7 @@ docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:s
  --label maintainer="Inigo Sanchez <jisanchez003@ehu.es>"\
  --pkg-manager apt\
  --install gcc g++ graphviz tree vim nano git octave\
- --fsl version=5.0.10\
+ --fsl version=5.0.8\
  --ants version=2.3.1\
  --miniconda env_name=elekin\
 	conda_install="python=3.6 traits jupyter jupyterlab matplotlib nibabel pip nitime numpy dcm2niix scikit-learn tensorflow Keras mkl theano pygpu"\
