@@ -2,7 +2,7 @@ docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:s
  --label maintainer="Inigo Sanchez <jisanchez003@ehu.es>"\
  --pkg-manager apt\
  --install gcc g++ graphviz tree vim nano git octave\
- --fsl version=6.0\
+ --fsl version=6.0.1\
  --ants version=2.3.1\
  --user elekin\
  --miniconda env_name=elekin\
