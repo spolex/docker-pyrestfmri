@@ -1,0 +1,22 @@
+pipeline {
+    environment {
+        registry = "pyrestfmri"
+    }
+    docker.withServer('tcp://k8.eastonlab.org:2376') {
+      agent any
+      stages {
+        stage('Cloning Git') {
+          steps {
+            git 'https://github.com/spolex/docker-pyrestfmri.git'
+          }
+        }
+        stage('Building image') {
+          steps{
+            script {
+              docker.build registry + ":$BUILD_NUMBER"
+            }
+          }
+        }
+      }
+    }
+}
