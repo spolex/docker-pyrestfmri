@@ -16,5 +16,5 @@ docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:s
  --volume /home/elekin/datos\
  --volume /home/elekin/pyrestfmri\
  --volume /home/elekin/results\
- --workdir /home/elekin/pyrestfmri\
- --cmd "/home/elekin/pyrestfmri/preprocess.py","-c","/home/elekin/pyrestfmri/conf/config_test.json" 
+ --workdir="/home/elekin"\
+ --cmd "/home/elekin/pyrestfmri/preprocess.py","-c","/home/elekin/pyrestfmri/conf/config_test.json"
