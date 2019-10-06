@@ -10,7 +10,8 @@ node {
      sh "./pyrestfmri/generate_docker.sh > Dockerfile"
      }
     stage ("Build image") {
-            img = docker.build('spolex/pyrestfmri:0.1')
+            img = docker.build('spolex/pyrestfmri:env.BUILD_NUMBER')
+            docker.build('spolex/pyrestfmri:latest')
      }
      stage('Test image') {
         /* Ideally, we would run a test framework against our image.
@@ -25,8 +26,8 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            img.push("${env.BUILD_NUMBER}")
-            img.push("latest")
+            //img.push("${env.BUILD_NUMBER}")
+            //img.push("latest")
         }
     }
     }
