@@ -1,7 +1,8 @@
 node {
     docker.withServer('tcp://k8.eastonlab.org:2376') {
      stage ("Build image") {
-            docker.build 'spolex/pyrestfmri:0.2'
+            git "https://github.com/spolex/docker-pyrestfmri.git"
+            docker.build('spolex/pyrestfmri:0.2',./pyrestfmri)
         }
     }
 }
