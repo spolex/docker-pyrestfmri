@@ -1,8 +1,7 @@
 node {
-    def pyimg
     docker.withServer('tcp://k8.eastonlab.org.gfd:2376') {
-     stage ("Build image") {
-            pyimg = docker.build 'spolex/pyrestfmri:0.2'
+     stage ("Build new image") {
+            docker.build 'spolex/pyrestfmri:0.2'
         }
     }
 }
