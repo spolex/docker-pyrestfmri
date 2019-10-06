@@ -1,8 +1,14 @@
 node {
     docker.withServer('tcp://k8.eastonlab.org:2376') {
-     stage ("Build image") {
-            git branch:"develop",url:"https://github.com/spolex/docker-pyrestfmri.git"
-            docker.build('spolex/pyrestfmri:0.2','./pyrestfmri')
+    stage ("Get source from Git"){
+        git branch:"develop",url:"https://github.com/spolex/docker-pyrestfmri.git"
+    }
+    stage ("Generate Dockerfile") {
+     sh "hostname"
+     sh "./pyrestfmri/generate_docker.sh > Dockerfile"
+     }
+    stage ("Build image") {
+            docker.build('spolex/pyrestfmri:0.1')
         }
     }
 }
