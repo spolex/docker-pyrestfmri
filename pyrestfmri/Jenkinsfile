@@ -1,5 +1,4 @@
 node {
-    def pyimg
     docker.withServer('tcp://k8.eastonlab.org:2376') {
     stage ("Get source from Git"){
         git branch:"develop",url:"https://github.com/spolex/docker-pyrestfmri.git"
@@ -9,7 +8,7 @@ node {
      sh "./pyrestfmri/generate_docker.sh > Dockerfile"
      }
     stage ("Build image") {
-            pyimg = docker.build('spolex/pyrestfmri:0.1')
+            docker.build('spolex/pyrestfmri:0.1')
         }
     }
 }
