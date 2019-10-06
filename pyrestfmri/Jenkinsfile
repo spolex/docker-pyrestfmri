@@ -10,7 +10,7 @@ node {
      sh "./pyrestfmri/generate_docker.sh > Dockerfile"
      }
     stage ("Build image") {
-            img = docker.build('spolex/pyrestfmri:env.BUILD_NUMBER')
+            img = docker.build('spolex/pyrestfmri:${env.BUILD_NUMBER}')
             docker.build('spolex/pyrestfmri:latest')
      }
      stage('Test image') {
