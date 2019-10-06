@@ -1,6 +1,6 @@
 properties([pipelineTriggers([githubPush()])])
 node {
-    docker.withServer('tcp://k8.eastonlab.org:2376') {
+    docker.withServer("${SERVER}") {
     stage ("Get source from Git"){
         git branch:"develop",url:"https://github.com/spolex/docker-pyrestfmri.git"
     }
