@@ -11,11 +11,11 @@ node{
          }
 
         stage ("Run pyrestfmri container"){
-            img.run("--name pyrestfmri-lab -v ${DATA_PATH}:/home/elekin/datos \
-            -v ${APP_PATH}:/home/elekin/pyrestfmri  \
-            -v ${RESULTS}:/home/elekin/results \
+            img.run('--name pyrestfmri-lab -v ${DATA_PATH}:/home/elekin/datos \
             -p 8888:8888 \
-            ,'${APP}'")
+            -v ${APP_PATH}:/home/elekin/pyrestfmri  \
+            -v ${RESULTS}:/home/elekin/results', \
+            '${APP}')
          }
 
     }
