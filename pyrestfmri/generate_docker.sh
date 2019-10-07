@@ -1,7 +1,7 @@
 docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:stretch-non-free\
  --label maintainer="Inigo Sanchez <jisanchez003@ehu.es>"\
  --pkg-manager apt\
- --install gcc g++ graphviz tree vim nano git octave\
+ --install gcc g++ graphviz tree vim nano git octave htop\
  --fsl version=6.0.1\
  --ants version=2.3.1\
  --user elekin\
