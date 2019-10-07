@@ -8,7 +8,7 @@ docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:s
  --workdir='/home/elekin'\
  --run "mkdir ~/.conda"\
  --miniconda create_env=elekin\
-	conda_install="traits jupyter jupyterlab matplotlib nibabel pip nitime numpy scikit-learn"\
+	conda_install="traits jupyter jupyterlab matplotlib nibabel pip nitime numpy scikit-learn networkx scipy"\
 	pip_install="https://github.com/nipy/nipype/tarball/master nilearn"\
  	activate=true\
  --run "mkdir -p ~/.jupyter && echo c.NotebookApp.ip = \'0.0.0.0\' > ~/.jupyter/jupyter_notebook_config.py"\
