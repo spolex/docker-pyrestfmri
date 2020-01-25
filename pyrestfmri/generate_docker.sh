@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:stretch-non-free\
+docker run --rm kaczmarj/neurodocker:master generate docker --base debian:stretch\
  --label maintainer="Inigo Sanchez <jisanchez003@ehu.es>"\
  --pkg-manager apt\
  --install gcc g++ graphviz tree vim nano git octave htop\
