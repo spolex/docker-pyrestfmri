@@ -10,7 +10,7 @@ node {
      sh "./pyrestfmri/generate_docker.sh > Dockerfile"
      }
     stage ("Build image") {
-            img = docker.build(" --network host spolex/pyrestfmri:${VERSION}.${env.BUILD_NUMBER}")
+            img = docker.build("spolex/pyrestfmri:${VERSION}.${env.BUILD_NUMBER}").withRun("--network host")
             docker.build('spolex/pyrestfmri:latest')
      }
      stage('Test image') {
