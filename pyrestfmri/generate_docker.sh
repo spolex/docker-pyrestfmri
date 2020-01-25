@@ -13,7 +13,7 @@ docker run --rm kaczmarj/neurodocker:master generate docker --base neurodebian:s
  	activate=true\
  --run "mkdir -p ~/.jupyter && echo c.NotebookApp.ip = \'0.0.0.0\' > ~/.jupyter/jupyter_notebook_config.py"\
  --expose 8888 8888\
- --volume /home/elekin/datos\
- --volume /home/elekin/pyrestfmri\
- --volume /home/elekin/results\
+ --volume /home/elekin/datos:/home/hadoop/nfs-storage/00-DATASOURCES/00-FMRI\
+ --volume /home/elekin/pyrestfmri:/home/hadoop/nfs-storage/03-WORKSPACE/pyrestfmri\
+ --volume /home/elekin/results:/home/hadoop/nfs-storage/02-RESULTADOS/output\
  --cmd "/home/elekin/pyrestfmri/preprocess.py","-c","/home/elekin/pyrestfmri/conf/config_test.json"
