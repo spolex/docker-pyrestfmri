@@ -10,8 +10,8 @@ node {
      sh "./pyrestfmri/generate_docker.sh > Dockerfile"
      }
     stage ("Build image") {
-            img = docker.build("spolex/pyrestfmri:${VERSION}.${env.BUILD_NUMBER}")
-            docker.build('spolex/pyrestfmri:latest')
+            img = docker.build("spolex/pyrestfmri:${VERSION}.${env.BUILD_NUMBER}", --network host --no-cache )
+            docker.build('spolex/pyrestfmri:latest, --network host')
      }
      stage('Test image') {
         /* Ideally, we would run a test framework against our image.
