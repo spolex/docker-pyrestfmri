@@ -10,12 +10,11 @@ node {
      sh "./pyrestfmri/generate_docker.sh > Dockerfile"
      }
     stage ("Build image") {
-            img = docker.build("spolex/pyrestfmri:${VERSION}.${env.BUILD_NUMBER}", "--network host --no-cache")
-            docker.build("spolex/pyrestfmri:latest", "--network host")
+            img = docker.build("spolex/pyrestfmri:${VERSION}.${env.BUILD_NUMBER}", "--network host --no-cache .")
+            docker.build("spolex/pyrestfmri:latest", "--network host .")
      }
      stage('Test image') {
-        /* Ideally, we would run a test framework against our image.
-         * For this, we're using a Volkswagen-type approach ;-) */
+        /* Ideally, we would run a test framework against our image.*/
         img.inside {
             sh 'echo "Tests passed"'
         }
