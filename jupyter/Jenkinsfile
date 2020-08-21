@@ -7,11 +7,11 @@ node {
     }
     stage ("Generate Dockerfile") {
      sh "hostname"
-     sh "./jupyter/generate_jupyter_docker.sh > Dockerfile"
+     sh "./jupyter/generate_docker.sh > Dockerfile"
      }
     stage ("Build image") {
             img = docker.build("spolex/pyrestfmri-lab:${VERSION}.${env.BUILD_NUMBER}", "--network host --no-cache .")
-            docker.build("spolex/pyrestfmri:latest", "--network host .")
+            docker.build("spolex/pyrestfmri-lab:latest", "--network host .")
      }
      stage('Test image') {
         /* Ideally, we would run a test framework against our image.*/
