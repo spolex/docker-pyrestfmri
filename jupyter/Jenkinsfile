@@ -8,6 +8,7 @@ node {
     stage ("Generate Dockerfile") {
      sh "hostname"
      sh "ls -lias jupyter"
+     sh "./generate_docker.sh"
      }
    }
 }
