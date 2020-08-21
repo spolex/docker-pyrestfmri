@@ -25,7 +25,6 @@ node {
             -v ${APP_PATH}:/home/elekin/pyrestfmri  \
             -v ${RESULTS}:/home/elekin/results', \
             '${APP}')
-         }
-    }
+      }
     }
 }
