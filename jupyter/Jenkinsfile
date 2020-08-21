@@ -7,7 +7,7 @@ node {
     }
     stage ("Generate Dockerfile") {
      sh "hostname"
-     sh "ls jupyter"
+     sh "ls -lias jupyter"
      }
    }
 }
