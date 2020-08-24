@@ -109,3 +109,9 @@ venv.bak/
 #data
 #output
 heudiconv/output/*
+/.idea/.gitignore
+/.idea/docker-pyrestfmri.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/vcs.xml
