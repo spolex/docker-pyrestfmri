@@ -98,13 +98,13 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-/site
+site/
 
 # mypy
 .mypy_cache/
 
 #ide
-./idea
+.idea/
 
 #data
 #output
