@@ -103,15 +103,9 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-#ide
-./idea
-
 #data
 #output
 heudiconv/output/*
-/.idea/.gitignore
-/.idea/docker-pyrestfmri.iml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/vcs.xml
+
+#ide
+.idea/
