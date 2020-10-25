@@ -1,0 +1,24 @@
+node{
+    def img
+    docker.withServer("${SERVER}") {
+
+        stage ('Checkout'){
+            git branch: 'develop', url: 'https://github.com/spolex/docker-pyrestfmri.git'
+        }
+
+        stage ("Get image"){
+            img = docker.image("spolex/pyrestfmri-lab:${IMG_VER}")
+         }
+
+        stage ("Run pyrestfmri container"){
+            img.run('--name pyrestfmri-lab -v ${DATA_PATH}:/home/elekin/datos \
+            --user 1001 \
+            -p 8888:8888 \
+            -p 6006-6009:6006-6009 \
+            -v ${APP_PATH}:/home/elekin/pyrestfmri  \
+            -v ${RESULTS}:/home/elekin/results', \
+            '${APP}')
+         }
+
+    }
+}
