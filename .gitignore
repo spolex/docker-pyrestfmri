@@ -104,7 +104,7 @@ site/
 .mypy_cache/
 
 #ide
-.idea/
+.idea
 
 #data
 #output
