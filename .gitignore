@@ -109,3 +109,6 @@ site/
 #data
 #output
 heudiconv/output/*
+
+# local files
+*.txt
